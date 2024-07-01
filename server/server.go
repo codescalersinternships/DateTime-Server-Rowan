@@ -19,9 +19,10 @@ type timeStruct struct {
 	second float64
 }
 
-func getDateTime(w http.ResponseWriter, req *http.Request) {
+// GetDateTime is the handler function for getting date and time at "/datetime"
+func GetDateTime(w http.ResponseWriter, req *http.Request) {
 
-	fmt.Fprintln(w, time.Now().String())
+	fmt.Fprintln(w, time.Now())
 }
 
 func getDate(w http.ResponseWriter, req *http.Request) {
@@ -38,7 +39,7 @@ func getTime(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 
-	http.HandleFunc("/datetime", getDateTime)
+	http.HandleFunc("/datetime", GetDateTime)
 	http.HandleFunc("/date", getDate)
 	http.HandleFunc("/time", getTime)
 
