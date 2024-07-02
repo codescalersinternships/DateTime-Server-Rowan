@@ -40,7 +40,7 @@ func main() {
 	r.GET("/datetime", GetDateTime)
 	// r.GET("/date", GetDate)
 	// r.GET("/time", GetTime)
-	err := r.Run(":8080")
+	err := r.Run(":8089")
 	if err != nil {
 		fmt.Printf("Error starting the server: %s\n", err)
 		os.Exit(1)
