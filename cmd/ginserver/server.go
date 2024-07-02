@@ -22,7 +22,7 @@ import (
 
 // GetDateTime is the handler function for getting date and time at "/datetime"
 func GetDateTime(c *gin.Context) {
-	c.String(http.StatusOK, time.Now().String())
+	c.String(http.StatusOK, fmt.Sprint(time.Now()))
 }
 
 // func GetDate(c *gin.Context) {
