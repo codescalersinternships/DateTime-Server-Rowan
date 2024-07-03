@@ -68,6 +68,20 @@ docker compose up
 3. run
 4. clean
 
+### Commands: 
+
+```
+make //automatically builds
+```
+```
+make test
+```
+```
+make run
+```
+```
+make clean
+```
 
 ### To Send Requests:
 ```
