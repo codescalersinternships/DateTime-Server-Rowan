@@ -1,0 +1,10 @@
+version: '3'
+services:
+  httpserver:
+    image: rowan
+    ports:
+      - "8080:8080"
+  ginserver:
+    image: notrowan
+    ports:
+      - "8089:8089"
