@@ -1,5 +1,16 @@
-FROM golang:1.22.4-alpine
+FROM golang:1.22.4-alpine AS builder
 WORKDIR /src
 COPY . .
 RUN go build -o /ginserver ./cmd/ginserver/server.go
-ENTRYPOINT [ "/ginserver" ]
+
+FROM scratch AS final
+WORKDIR /app
+COPY --from=builder /ginserver /app
+ENTRYPOINT [ "./ginserver" ]
+
+# notrowan                <none>        969c45d22479   16 hours ago     569MB
+# notrowan              latest        4e8125d94ddd   19 seconds ago   10.8MB
+
+
+
+

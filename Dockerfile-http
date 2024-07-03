@@ -1,5 +1,12 @@
-FROM golang:1.22.4-alpine
+FROM golang:1.22.4-alpine AS builder
 WORKDIR /src
 COPY . .
 RUN go build -o /httpserver ./cmd/httpserver/server.go
-ENTRYPOINT [ "/httpserver" ]
+
+FROM scratch AS final
+WORKDIR /app
+COPY --from=builder /httpserver /app
+ENTRYPOINT [ "./httpserver" ]
+
+# rowan               <none>        dc912c1c9172   16 hours ago     311MB
+# rowan                 latest        98d5b8188c50   2 minutes ago    7MB
