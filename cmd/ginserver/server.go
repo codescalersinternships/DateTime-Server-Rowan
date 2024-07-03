@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"time"
+	"errors"
 )
 
 //	type date struct {
@@ -41,7 +42,9 @@ func main() {
 	// r.GET("/date", GetDate)
 	// r.GET("/time", GetTime)
 	err := r.Run(":8089")
-	if err != nil {
+	if errors.Is(err, http.ErrServerClosed) {
+		fmt.Println("SErver closed")
+	} else if err != nil {
 		fmt.Printf("Error starting the server: %s\n", err)
 		os.Exit(1)
 	}

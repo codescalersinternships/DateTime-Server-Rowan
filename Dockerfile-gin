@@ -8,8 +8,6 @@ WORKDIR /app
 COPY --from=builder /ginserver /app
 ENTRYPOINT [ "./ginserver" ]
 
-# notrowan                <none>        969c45d22479   16 hours ago     569MB
-# notrowan              latest        4e8125d94ddd   19 seconds ago   10.8MB
 
 
 

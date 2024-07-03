@@ -7,6 +7,3 @@ FROM scratch AS final
 WORKDIR /app
 COPY --from=builder /httpserver /app
 ENTRYPOINT [ "./httpserver" ]
-
-# rowan               <none>        dc912c1c9172   16 hours ago     311MB
-# rowan                 latest        98d5b8188c50   2 minutes ago    7MB
