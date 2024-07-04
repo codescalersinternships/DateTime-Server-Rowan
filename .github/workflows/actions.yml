@@ -13,8 +13,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.22.x'
-      - name: Setup Make
-        run: apt install make
+      # - name: Setup Make
+      #   run: sudo apt install make -f
       - name: Build
         run: make build
       - name: Test with the Go CLI
@@ -29,8 +29,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.22.x'
-      - name: Setup Make
-        run: apt install make
+      # - name: Setup Make
+      #   run: sudo apt install make -f
       - name: Format
         run: make fmt
       - name: Golangci Linter
