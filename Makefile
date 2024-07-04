@@ -11,3 +11,5 @@ run: build
 clean:
 	rm httpserver
 	rm ginserver
+fmt:
+	go fmt ./...
