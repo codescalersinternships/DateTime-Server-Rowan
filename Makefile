@@ -5,7 +5,7 @@ build:
 test: build
 	go test ./...
 
-run: build
+run compose: build
 	sudo docker compose up
 
 clean:
