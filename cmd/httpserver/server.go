@@ -22,7 +22,7 @@ type timeStruct struct {
 // GetDateTime is the handler function for getting date and time at "/datetime"
 func GetDateTime(w http.ResponseWriter, req *http.Request) {
 
-	fmt.Fprintln(w, time.Now())
+	fmt.Fprint(w, time.Now())
 }
 
 func getDate(w http.ResponseWriter, req *http.Request) {
@@ -45,7 +45,7 @@ func main() {
 
 	err := http.ListenAndServe(":8080", nil)
 	if errors.Is(err, http.ErrServerClosed) {
-		fmt.Println("SErver closed")
+		fmt.Println("Server closed")
 	} else if err != nil {
 		fmt.Printf("Error starting the server: %s\n", err)
 		os.Exit(1)
