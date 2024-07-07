@@ -1,0 +1,16 @@
+version: '3'
+services:
+  httpserver:
+    # image: datetime-server-rowan-httpserver
+    build:
+      context: .
+      dockerfile: Dockerfile-http
+    ports:
+      - "8080:8080"
+  ginserver:
+    # image: datetime-server-rowan-ginserver
+    build: 
+      context: .
+      dockerfile: Dockerfile-gin
+    ports:
+      - "8089:8089"
